@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SampleDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Sales_Journal">
+    <Key>
+      <PropertyRef Name="Transaction_ID" />
+    </Key>
+    <Property Name="Transaction_ID" Type="Int32" Nullable="false" />
+    <Property Name="Transaction_Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Transaction_Details" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+    <Property Name="Transaction_Debit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Transaction_Credit" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SampleDatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sales_Journal" EntityType="Self.Sales_Journal" />
+  </EntityContainer>
+</Schema>
